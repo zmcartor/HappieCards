@@ -1,0 +1,12 @@
+<form action="/backgrounds/upload" method='POST' enctype="multipart/form-data">
+
+  <select name='category_id'>
+    <% @categories.each do |cat| %>
+      <option value=<%=cat.id %>> <%=cat.name %> </option>
+    <% end %>
+  </select>
+
+  <input type="file" name='background_file' />
+  <input type="submit" value="Upload" />
+
+</form>

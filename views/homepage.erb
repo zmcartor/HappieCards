@@ -1,0 +1,78 @@
+<div id="fb-root"></div>
+<script type='text/javascript'>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : 400961483294720, // App ID
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+      });
+
+    //now FB is all loaded and happy!
+    FB.getLoginStatus(function(response) {
+
+        console.log(response);
+
+        if (response.status === 'connected') {
+        // the user is logged in and has authenticated your
+        // app, and response.authResponse supplies
+        // the user's ID, a valid access token, a signed
+        // request, and the time the access token 
+
+        //show the 'get started' link.
+        $('a.get_started').fadeIn();
+
+        } else if (response.status === 'not_authorized') {
+        //Login to HappyCards with Facebook
+        //show the login button
+        // the user is logged in to Facebook, 
+        // but has not authenticated your app
+        $('.fb-button').fadeIn();
+        } else {
+        $('.fb-button').fadeIn();
+        // the user isn't logged in to Facebook.
+        }
+    });
+
+
+    //when they login with the SDK, redirect into the app.
+    FB.Event.subscribe('auth.login',function(response) {
+        window.location.href='/cards/home';
+        });
+
+
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+     }(document));
+
+   </script>
+
+<div class="container">
+  <h1>HappieCards</h1><small>Cards with a smile!</small>
+  <div class="row">
+    <div class="span4">
+
+      <div class='login-fb middle'>
+        <div class='fb-button' style='display:none;'>
+          <h2>Login with Facebook</h2>
+        </div>
+        <div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1">Login</div>
+        <a class ='get_started' href='/cards/home' style="display:none;">Get Started!</a>
+    </div>
+
+    </div>
+    <div class="span6 offset2">
+ <p> Send a quick eCard to someone on their birthday, anniversary, Halloween, or just because they need a smile :)
+      HappieCards makes it easy to let someone know you're thinking of them.
+      </p>
+      <img src="http://placehold.it/350x350">
+    </div>
+
+  </div>
