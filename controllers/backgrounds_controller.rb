@@ -16,15 +16,17 @@ class HappyCards < Sinatra::Base
 
   get '/backgrounds/category/:cate', :auth => true do
     #grab all the backgrounds with that category
+    Background.find(:all ,:conditions=>{:category_id => params[:cate]}).to_json(:methods=>:public_url)
   end
 
   put '/backgrounds/:id', :auth=>true do
     #update the model with :id
+    puts params
   end
 
   post 'backgrounds/:id', :auth=> true do
     #create a new resource
+    puts params
   end
-
 
 end

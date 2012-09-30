@@ -20,4 +20,10 @@ class Background < ActiveRecord::Base
   :fog_host => 'http://89a1bd14c387a173d429-61ab973465be3d5f3bfd4632d23d0341.r49.cf1.rackcdn.com' #found in rackspace panel
 
   validates_attachment_presence :pic
+
+  #Set our public URL using Paperclip "pic" function
+  def public_url
+    self.pic.to_s
+  end
+
 end
