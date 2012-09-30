@@ -16,3 +16,6 @@ require_relative 'callback'
       :adapter => 'postgresql',
       :database =>  'hcards'
     )
+
+    #globally don't include the root in json
+    ActiveRecord::Base.include_root_in_json = false
