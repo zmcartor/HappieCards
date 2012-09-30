@@ -7,3 +7,4 @@
 //= require_tree ./app/collections
 //= require_tree ./app/views
 //= require_tree ./app/templates
+//= require_tree ./app

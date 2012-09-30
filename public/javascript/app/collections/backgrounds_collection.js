@@ -17,8 +17,12 @@
 
     backgrounds.prototype.model = window.HappieApp.Models.Background;
 
-    backgrounds.prototype.initialize = function(type) {
-      return this.url = '/backgrounds/' + type;
+    backgrounds.prototype.url = function() {
+      return '/backgrounds/category/' + this.type;
+    };
+
+    backgrounds.prototype.set_category = function(type) {
+      return this.type = type;
     };
 
     return backgrounds;
