@@ -17,9 +17,8 @@ class HappyCards < Sinatra::Base
     #update the model with :id
   end
 
-  post '/cards/:id', :auth=> true do
-    #create a new resource
-
+  post '/cards/:background_id', :auth=> true do
+    #create a new resource with this background_id
   end
 
   delete '/cards/:id' , :auth=> true do
