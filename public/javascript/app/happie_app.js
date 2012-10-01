@@ -41,9 +41,10 @@
       var card_compose_view;
       console.log('compose card');
       this.hanger$.empty();
-      return card_compose_view = new window.HappieApp.Views.Card_compose({
-        model: window.App.bg_model
+      card_compose_view = new window.HappieApp.Views.Card_compose({
+        bg_model: window.App.bg_model
       });
+      return this.hanger$.append(card_compose_view.el);
     };
 
     Router.prototype.history = function() {
@@ -76,8 +77,9 @@
     };
 
     HappieApp.prototype.background_unchose = function() {
-      this.selected_background = void 0;
-      return console.log('unchosen!!');
+      this.bg_model = void 0;
+      console.log('unchosen!!');
+      return this.router.navigate("/choose_background", true);
     };
 
     HappieApp.prototype.start = function() {

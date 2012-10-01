@@ -25,7 +25,9 @@ window.HappieApp.Router = class Router extends Backbone.Router
     console.log 'compose card'
     @hanger$.empty()
     #when a background is chosen, App instance will keep track of it
-    card_compose_view = new window.HappieApp.Views.Card_compose(model: window.App.bg_model)
+    #reloading the page throws an error better way here ? session ?
+    card_compose_view = new window.HappieApp.Views.Card_compose(bg_model: window.App.bg_model)
+    @hanger$.append(card_compose_view.el)
 
   history: ()->
     console.log 'history!!'
@@ -52,8 +54,9 @@ window.HappieApp.App = class HappieApp
     @router.navigate "/compose", true
 
   background_unchose: ()=>
-    @selected_background = undefined
+    @bg_model = undefined
     console.log 'unchosen!!'
+    @router.navigate "/choose_background", true
 
   start:()->
     @router.navigate "/choose_background", true
