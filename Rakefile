@@ -2,7 +2,13 @@ namespace :db do
   task :environment do
     require 'active_record'
     require 'logger'
-    ActiveRecord::Base.establish_connection :host => 'localhost' ,:adapter => 'postgresql', :database =>  'hcards'
+    require 'yaml'
+
+    config = YAML.load_file('config/db.yml')
+
+    ActiveRecord::Base.establish_connection :host => config['host'] ,
+      :adapter => config['adapter'],
+      :database => config['database']
   end
 
   desc "Migrate the database"
@@ -16,6 +22,7 @@ end
 namespace :utils do
   desc "Start AR console"
   task(:console) do
+    require 'bundler'
     require_relative 'models/init'
     require 'irb'
     puts "Loading HappieCards ActiveRecord Console.."

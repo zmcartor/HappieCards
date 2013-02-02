@@ -1,0 +1,6 @@
+# FB, Twitter, and other Auth tokens go here
+
+Facebook:
+  app_id: 1234
+  app_code: longstingofcharscharschars
+  site_url: http://someurl.com

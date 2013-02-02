@@ -1,14 +1,26 @@
 source :rubygems
+gem 'thin'
 gem 'sinatra'
-gem 'sinatra-assetpack'
 gem 'sinatra-contrib'
-gem 'activerecord'
-gem 'activerecord-postgresql-adapter'
-gem 'sinatra-backbone', :require => 'sinatra/backbone'
 gem 'koala'
-gem 'sprockets'
-gem 'ejs'
-gem 'jasmine'
-gem 'paperclip'
-gem 'fog'
-gem 'excon'
+gem 'rake'
+gem 'guard'
+gem 'guard-jasmine'
+gem 'guard-coffeescript'
+gem 'rb-fsevent'
+gem 'growl'
+
+group :assets do
+  gem 'sprockets'
+  gem 'ejs'
+end
+
+group :DB do
+  gem 'activerecord', require: 'active_record'
+  gem 'activerecord-postgresql-adapter'
+  gem 'paperclip'
+  gem 'fog'
+  gem 'excon'
+end
+
+

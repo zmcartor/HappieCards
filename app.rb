@@ -1,9 +1,5 @@
-#use Pony to send email http://adam.heroku.com/past/2008/11/2/pony_the_express_way_to_send_email_from_ruby/
-#start on coffeescrpt BB stuf and CSS to finish it out
-
-require 'sinatra'
-require 'sinatra/assetpack'
-require 'koala'
+require 'bundler'
+Bundler.require :default
 
 #we use sprockets to serve our assets
 class HappyCards < Sinatra::Base
@@ -16,11 +12,11 @@ class HappyCards < Sinatra::Base
 
   include Koala
 
-  # register your app at facebook to get those infos
-  # for localhost:9393. not a big security deal
-  APP_ID = 400961483294720 # your app id
-  APP_CODE = '7c03edeb909b49e4b756bf3413ef4665' # your app code
-  SITE_URL = 'http://localhost:9393' # your app site url
+  configFB = YAML.load_file('config/access.yml')['Facebook']
+
+  APP_ID = configFB['app_id']
+  APP_CODE = configFB['app_code']
+  SITE_URL = configFB['site_url']
 
   #used to parse the FB cookie set via JS SDK
   def verify_user()

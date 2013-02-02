@@ -4,6 +4,7 @@ class BackgroundsTable < ActiveRecord::Migration
 
       t.string :url
       t.references :category
+
       t.timestamps
     end
   end

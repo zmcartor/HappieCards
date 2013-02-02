@@ -1,11 +1,13 @@
 require ::File.expand_path('../app',  __FILE__)
-require 'sprockets'
-require 'ejs'
+require 'bundler'
+Bundler.require :assets
 
 sprocket = Sprockets::Environment.new
 sprocket.append_path 'public/javascript/'
 sprocket.append_path 'public/javascript/app'
 sprocket.append_path 'public/javascript/vendors'
+sprocket.append_path 'public/javascript/vendors/backbone'
+sprocket.append_path 'public/javascript/vendors/underscore'
 sprocket.append_path 'public/css'
 
 map '/javascript' do

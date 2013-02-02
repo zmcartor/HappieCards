@@ -1,7 +1,7 @@
-//= require jquery-1.6.2.min
-//= require underscore
-//= require json2
-//= require backbone
+//= require vendors/jquery-1.8.3.js
+//= require underscore-min.js
+//= require json2.js
+//= require backbone-min.js
 
 //= require_tree ./app/models
 //= require_tree ./app/collections

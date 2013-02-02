@@ -20,7 +20,7 @@
     };
 
     Choose_background.prototype.initialize = function() {
-      _.bindAll(this);
+      _.bindAll(this, 'fetch_backgrounds');
       this.template = JST['app/templates/choose_background'];
       this.collection = new HappieApp.Collections.Backgrounds();
       this.collection.on('reset', this.show_backgrounds);
@@ -37,8 +37,7 @@
       $('#background_place ul', this.$el).empty();
       selected = $('select#bg_types', this.el).val();
       this.collection.set_category(selected);
-      this.collection.fetch();
-      return console.log('hioho');
+      return this.collection.fetch();
     };
 
     Choose_background.prototype.show_backgrounds = function() {

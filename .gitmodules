@@ -1,0 +1,9 @@
+[submodule "public/bootstrap"]
+	path = public/bootstrap
+	url = git://github.com/twitter/bootstrap.git
+[submodule "public/javascript/vendors/backbone"]
+	path = public/javascript/vendors/backbone
+	url = git://github.com/documentcloud/backbone.git
+[submodule "public/javascript/vendors/underscore"]
+	path = public/javascript/vendors/underscore
+	url = git://github.com/documentcloud/underscore.git

@@ -22,7 +22,7 @@
     };
 
     backgrounds.prototype.set_category = function(type) {
-      return this.type = type;
+      return type = type;
     };
 
     return backgrounds;

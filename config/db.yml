@@ -1,0 +1,4 @@
+# Database creds go here
+host : localhost
+adapter: sqlite3
+database: db/test.sqlite3

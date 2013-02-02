@@ -1,3 +1,6 @@
+src_dir:
+    - public/javascript
+
 # src_files
 #
 # Return an array of filepaths relative to src_dir to include before jasmine specs.
@@ -10,8 +13,13 @@
 #   - lib/source2.js
 #   - dist/**/*.js
 #
+# src_dir doesn't fucking work.
 src_files:
-    - public/javascript/**/*.js
+    - public/javascript/vendors/jquery-1.8.3.js
+    - public/javascript/vendors/underscore/underscore-min.js
+    - public/javascript/vendors/json2.js
+    - public/javascript/vendors/backbone/backbone-min.js
+    - public/javascript/app/**/*.js
 
 # stylesheets
 #

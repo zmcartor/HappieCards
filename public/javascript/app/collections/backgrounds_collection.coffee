@@ -6,4 +6,4 @@ window.HappieApp.Collections.Backgrounds = class backgrounds extends Backbone.Co
   url: ()->'/backgrounds/category/'+@type
 
   set_category: (type)->
-    @type = type
+    type = type

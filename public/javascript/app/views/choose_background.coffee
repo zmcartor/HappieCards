@@ -7,7 +7,7 @@ window.HappieApp.Views.Choose_background = class Choose_background extends Backb
     'change select#bg_types' : 'fetch_backgrounds'
 
   initialize: ()->
-    _.bindAll @
+    _.bindAll @, 'fetch_backgrounds'
     @template = JST['app/templates/choose_background']
     @collection =new HappieApp.Collections.Backgrounds()
     @collection.on 'reset' , @show_backgrounds
@@ -22,7 +22,6 @@ window.HappieApp.Views.Choose_background = class Choose_background extends Backb
     selected = $('select#bg_types' , @el).val()
     @collection.set_category(selected)
     @collection.fetch()
-    console.log 'hioho'
 
   show_backgrounds: ()->
     @collection.each((model) =>
