@@ -9,6 +9,7 @@ gem 'guard-jasmine'
 gem 'guard-coffeescript'
 gem 'rb-fsevent'
 gem 'growl'
+gem 'paperclip', '~> 3.4.0'
 
 group :assets do
   gem 'sprockets'
@@ -16,9 +17,9 @@ group :assets do
 end
 
 group :DB do
+  gem 'sqlite3'
   gem 'activerecord', require: 'active_record'
   gem 'activerecord-postgresql-adapter'
-  gem 'paperclip'
   gem 'fog'
   gem 'excon'
 end
