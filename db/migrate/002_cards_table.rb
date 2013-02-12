@@ -5,7 +5,6 @@ class CardsTable < ActiveRecord::Migration
       #related to users table, from user
       t.references :user
       t.references :background
-      t.text :rendered
       t.text :message
 
       t.timestamps
