@@ -38,3 +38,21 @@ Model classes subclass ActiveRecord::Base and perform all the AR magic.
 Controller classes subclass HappieCards, which allows the controllers to add
 new routes to the app namespace. Controller files are organized under a
 resource. ie - /foo or /beer.
+
+## Configuration
+Put Facebook creds in config/access.yml
+
+If you're using a CDN, create a paperclip.yml and place CDN configuration
+there. It will be added to the Paperclip::Attachment.defaults array. Here's an
+example that will upload to Rackspace:
+
+defaults:
+  storage: !ruby/symbol fog
+  use_timestamp: false
+  fog_credentials:
+    provider: 'Rackspace'
+    rackspace_api_key: '12345568565868568568586'
+    rackspace_username: 'SmilyGuy'
+  fog_directory: 'happie'
+  fog_public: true
+  fog_host: 'http://04309ca038a9dfdfdfdb8-4abc72c672de1f2d0fd428ce7da4ea95.r61.cf1.rackcdn.com'
