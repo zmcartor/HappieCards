@@ -4,12 +4,15 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'koala'
 gem 'rake'
-gem 'guard'
-gem 'guard-jasmine'
-gem 'guard-coffeescript'
-gem 'rb-fsevent'
 gem 'growl'
 gem 'paperclip', '~> 3.4.0'
+
+group :development do
+  gem 'guard', '~> 1.4.0'
+  gem 'guard-jasmine'
+  gem 'guard-coffeescript'
+  gem 'rb-fsevent'
+end
 
 group :assets do
   gem 'sprockets'
