@@ -7,11 +7,12 @@ gem 'rake'
 gem 'growl'
 gem 'paperclip', '~> 3.4.0'
 
-group :development do
+group :development, :test do
   gem 'guard', '~> 1.4.0'
   gem 'guard-jasmine'
   gem 'guard-coffeescript'
   gem 'rb-fsevent'
+  gem 'jasmine'
 end
 
 group :assets do
