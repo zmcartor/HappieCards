@@ -1,4 +1,4 @@
-Bundler.require :DB
+Bundler.require :DB, :default
 
 #require up all the models, do this better.
 require_relative 'user'
