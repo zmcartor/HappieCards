@@ -3,19 +3,23 @@ TODOS:
 All these things are coordinated to create a 'card' resource. The current
 single page app area is designed around creating a single card resource
 
-Add Backbone and dependencies as submodules
 Update the README
-Write a test for collection fetching
+Upload a bunch of funny pictures to CDN
+Create 5 diff categories, 4 images each
 Write tests for any things where models deal with events
 Write test for view things
 Write serverside test for card resource validations
 Create a router to manage the 3 step process
 
+
 Step 1 - choose background, set the background on card resource and save.
 ? - handle getting back to unfinished card
 ? - handle deleting a card
+? - design breadcrumb interface ?
++ infinite scroll load more bg in category
 
 Step 2 - write cute message. save to card resource.
++ looking for inspiration? button. says random things
 
 Step 3 - Enter in email address.
 + add FB friend picker
@@ -24,3 +28,5 @@ Step 3 - Enter in email address.
 
 Step 4 - Receive email, server callback
 + design the email and 'clickback' handling.
+
+Step 5 - Cap script, deploy to server
