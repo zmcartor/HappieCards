@@ -6,4 +6,4 @@
 	url = git@github.com:documentcloud/backbone.git
 [submodule "public/javascript/vendors/underscore"]
 	path = public/javascript/vendors/underscore
-	url = git://github.com/documentcloud/underscore.git
+	url = git@github.com:documentcloud/underscore.git
